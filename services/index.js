@@ -18,7 +18,7 @@ const getTaskById = (result, id)=>{
 const createNewTask = (result, body) => {
     sql.query("insert into tasks set ?", body,(err, data)=>{
         if (err) return result(500, "failed")
-        return result(200, "success")
+        return result(201, "success")
     })
 }
 
@@ -26,7 +26,7 @@ const deleteATask = (result, id)=>{
     sql.query("delete from tasks where id = ?", id, (err, data)=>{
         if(err) return result(500, "failed")
         if(data.affectedRows === 0) return result(404, "Not found")
-        return result(200, "success")
+        return result(204, "success")
     })
 }
 

@@ -31,7 +31,7 @@ router.get("",(req, res)=>{
 .delete("/:id",(req,res)=>{
     deleter((code, status)=>{
         res.status(code).json({status: status})
-    }, [req.body, req.params.id])
+    }, req.params.id)
 
 })
 
