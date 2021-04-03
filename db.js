@@ -7,8 +7,8 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'ash1401043m',
-    database : 'taskdb'
+    password : process.env.password,
+    database : process.env.db
 });
 
 connection.connect(function(err) {
